@@ -25,4 +25,4 @@ jobs:
         run: npm run test
       - name: Create release
         id: release
-        run:  release major
+        run: release major
