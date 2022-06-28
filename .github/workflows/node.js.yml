@@ -23,3 +23,9 @@ jobs:
           git config --global user.email "github@users.noreply.github.com"
       - name: Test
         run: npm run test
+      - name: Create release
+        id: release
+        run: |
+            npm run release
+            VERSION=$(cat version.txt)
+            echo "::set-output name=version::$VERSION"
