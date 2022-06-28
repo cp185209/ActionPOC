@@ -23,6 +23,5 @@ jobs:
           git config --global user.email "github@users.noreply.github.com"
       - name: Test
         run: npm run test
-      - name: Create release
-        id: release
-        run: release major
+      - name: Createrelease
+        run: release pre
