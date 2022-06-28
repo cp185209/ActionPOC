@@ -21,3 +21,5 @@ jobs:
           npm install
           git config --global user.name "github"
           git config --global user.email "github@users.noreply.github.com"
+      - name: Test
+          run: npm run test
