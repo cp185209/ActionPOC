@@ -26,6 +26,4 @@ jobs:
       - name: Create release
         id: release
         run: |
-            npm run release
-            VERSION=$(cat version.txt)
-            echo "::set-output name=version::$VERSION"
+          release pre
