@@ -26,8 +26,6 @@ jobs:
       - name: create release
         id: createrelease
         uses: gregoranders/nodejs-create-release@v0.0.18
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag: 1.0.0.
           name: node - 1.0.0 Release
