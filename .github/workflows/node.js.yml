@@ -64,6 +64,7 @@ jobs:
           image: apoc
           registry: ghcr.io
           githubOrg: override-org # optional
+          dockerfile: Dockerfile.ci
           username: ${{ secrets.GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
