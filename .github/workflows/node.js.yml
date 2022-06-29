@@ -64,8 +64,8 @@ jobs:
           image: apoc
           registry: ghcr.io
           githubOrg: override-org # optional
-          username: ${{ secrets.GHCR_USERNAME }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          username: ${{ secrets.GITHUB_USERNAME }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push release tag
         if: ${{ github.event_name != 'pull_request' }}
