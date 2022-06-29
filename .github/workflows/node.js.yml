@@ -42,13 +42,15 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
-                # Image should be different for each service.
-         images: ghcr.io/HarryRosen/hr-orders-service
-         tags: |
-                  type=semver,pattern={{version}},value=1.0.0
-                  type=semver,pattern={{major}}.{{minor}},value=1.0.0
+         images: |
+              Actions/poc
+            tags: |
+              type=ref,event=branch
+              type=ref,event=pr
+              type=semver,pattern={{version}}
+              type=semver,pattern={{major}}.{{minor}}
 
       - name: Set up Docker Buildx
         id: buildx
