@@ -59,12 +59,13 @@ jobs:
          install: true
 
       - name: Build & push image
-        uses: docker/build-push-action@v2
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
-         context: .
-         push: ${{ github.event_name != 'pull_request' }}
-         tags: ${{ steps.meta.outputs.tags }}
-         labels: ${{ steps.meta.outputs.labels }}
+          image: apoc
+          registry: ghcr.io
+          githubOrg: override-org # optional
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Push release tag
         if: ${{ github.event_name != 'pull_request' }}
