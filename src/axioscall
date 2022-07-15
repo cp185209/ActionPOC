@@ -1,0 +1,11 @@
+const  axios =require( 'axios');
+
+const API = 'http://localhost:8080/Message/1';
+
+const fetchData = async () => {
+  const url = API;
+
+  return await axios.get(url);
+};
+
+console.log(fetchData().data);
